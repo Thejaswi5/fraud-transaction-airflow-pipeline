@@ -1,20 +1,34 @@
 # Fraud Transaction Airflow Pipeline
 
-A production-style Apache Airflow project for orchestrating a fraud transaction analytics pipeline using real-world transaction data.
+Batch data pipeline for validating and preparing transaction data for fraud analysis.
 
-The project focuses on reliable batch orchestration: validating source files, ingesting transaction data, enforcing schema checks, reconciling row counts, creating fraud-risk flags, and producing daily fraud monitoring outputs.
+The project is being built in small pieces. The current focus is the local Python pipeline logic first. Airflow orchestration will be added after the validation, ingestion, reconciliation, and summary steps are working locally.
 
-## Problem Statement
+## Current status
 
-Fraud operations teams rely on fresh, complete, and trustworthy transaction data. If an ingestion job fails silently, downstream reports may show stale metrics. If a partial file is loaded, analysts may investigate incorrect numbers. If schema changes are not detected early, transformation jobs may fail after bad data has already moved downstream.
+Done:
 
-This project demonstrates how an orchestrated pipeline can reduce those risks through task dependencies, validation gates, retries, logging, and backfill-ready processing.
+- project folder structure
+- Git ignore rules for raw data, processed data, logs, local databases, and virtual environments
+- shared pipeline settings
+- source file validation
+- transaction ingestion
+- sample test fixtures
+- unit tests for validation logic
+
+In progress:
+
+- ingestion tests
+- row-count reconciliation
+- fraud flag rules
+- daily fraud summary output
+- Airflow DAG
 
 ## Dataset
 
-This project is designed to work with the IEEE-CIS Fraud Detection transaction dataset.
+The pipeline is designed for the IEEE-CIS fraud transaction dataset.
 
-Expected local file location:
+Expected local file path:
 
 ```text
-data/raw/train_transaction.csv
+data/raw/train_transaction.csv EOF

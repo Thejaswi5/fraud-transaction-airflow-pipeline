@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.local
+
+# Local data files
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Local databases
+*.duckdb
+*.db
+*.sqlite
+
+# Logs
+logs/*
+!logs/.gitkeep
+*.log
+
+# Airflow local runtime
+airflow.db
+airflow.cfg
+webserver_config.py
+standalone_admin_password.txt
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea/
